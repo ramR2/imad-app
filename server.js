@@ -13,64 +13,6 @@ var config={
 var app = express();
 app.use(morgan('combined'));
 
-
-var articleOne={
-    title : 'Articleone',
-    content: `<div class="container"> 
-        <a href="/">Home</a> 
-        <a href="http://ramrajani.imad.hasura-app.io/article-2">jokes</a>
-        <a href="/article-3">end page </a>
-        <hr/>
-                     <div class="center text-big bold">
-           <h2>  R-SQUARE corporation</h2>
-            
-           
-                </div>
-      
-        
-       <div></div> <h2>Founder & CEO -Ram Rajani</h2>
-        <h3>Grow ur business with us:):)</h3>
-        <p>we have hired fb and twitter  :):)</p>
-           </div>`
-    
-
-};
-var articleTwo={
-    title:'jokes',
-    content:`<div class="container">
-<a href="/">Home</a>
-<a href="/article-1">company profile</a>
-<a href="/article-3">endpage</a>
-<hr/>
-<h1>enjoy few jokes</h1>
-
-
-<p>Santa falls in luv with a nurse... After much thinking, he finally writes
-a love letter to her: "I luv u sister."
-*******************************************************<br>
-Q: Why dogs don't marry?
-A: Because they are already leading a dog's life!
-*******************************************************<br>
-Pappu, while filling up a form: Dad, what should I write against mother
-tongue.?
-Santa: Very long!
-*******************************************************<br>
-Teacher: Pappu, TAMSO MA JYOTIR GAMYA" shloka ka kya arth hai?
-Pappu: Tum so jayo maa, mein Jyoti ke pass ja raha hoon.<br>
-*******************************************************</p>
-</div>`
-};
-var articleThree={
-    title:'end page',
-    content:`    <div class="container">
-<a href="/">Home</a>
-<a href="/article-1">company profile</a>
-<a href="/article-2">jokes</a>
-<hr/>
-<h1>thanks for visiting</h1>
-</div>`
-    
-};
 function createTemplate(data){
     var title=data.title;
     var content=data.content;
@@ -113,7 +55,7 @@ app.get('/ui/main.js', function (req, res) {
 
 app.get('/articles/:articleName',function(req,res){
     var articleName=req.params.articleName;
-    pool.query("SELECT * FROM article WHERE title="+req.params.articleName,function(err,result){
+    pool.query("SELECT * FROM article WHERE title='"+req.params.articleName+"'",function(err,result){
        if(err)
        {
            res.send(500).send(err.toString());
