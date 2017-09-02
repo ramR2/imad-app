@@ -100,7 +100,7 @@ app.get('/test-db',function(req,res){
         }
         else
         {
-            res.send(Json.Stringify(result));
+            res.send(Json.stringify(result));
         }
     } );
 });
