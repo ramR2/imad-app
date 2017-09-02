@@ -55,6 +55,7 @@ app.get('/ui/main.js', function (req, res) {
 
 app.get('/articles/:articleName',function(req,res){
     var articleName=req.params.articleName;
+    var articleData=result.rows[0];
     pool.query("SELECT * FROM article WHERE title='"+req.params.articleName+"'",function(err,result){
        if(err)
        {
@@ -69,7 +70,7 @@ app.get('/articles/:articleName',function(req,res){
            }
            else
            {
-               var articleData=result.rows[0];
+               
                res.send(createTemplate(articleData));
            }
        }
