@@ -27,6 +27,31 @@ var articleOne={
     
 
 };
+var articleTwo={
+    title:'jokes',
+    content:`<div class="container">
+<a href="/">Home</a>
+<a href="/article-1">company profile</a>
+<a href="/article-3">endpage</a>
+<hr/>
+<h1>enjoy few jokes</h1>
+
+
+<p>Santa falls in luv with a nurse... After much thinking, he finally writes
+a love letter to her: "I luv u sister."
+*******************************************************<br>
+Q: Why dogs don't marry?
+A: Because they are already leading a dog's life!
+*******************************************************<br>
+Pappu, while filling up a form: Dad, what should I write against mother
+tongue.?
+Santa: Very long!
+*******************************************************<br>
+Teacher: Pappu, TAMSO MA JYOTIR GAMYA" shloka ka kya arth hai?
+Pappu: Tum so jayo maa, mein Jyoti ke pass ja raha hoon.<br>
+*******************************************************</p>
+</div>`
+};
 function createTemplate(data){
     var title=data.title;
     var content=data.content;
@@ -58,7 +83,7 @@ app.get('/article-1',function(req,res){
   res.send(createTemplate(articleOne));
 });
 app.get("/article-2",function(req,res){
-   res.sendFile(path.join(__dirname, 'ui', 'article-2.html'));
+   res.send(createTemplate(articleTwo));
 });
 app.get("/article-3",function(req,res){
    res.sendFile(path.join(__dirname, 'ui', 'article-3.html'));
