@@ -23,7 +23,7 @@ var articleOne={
        <div></div> <h2>Founder & CEO -Ram Rajani</h2>
         <h3>Grow ur business with us:):)</h3>
         <p>we have hired fb and twitter  :):)</p>
-           </div>`;
+           </div>`,
     
 
 };
