@@ -52,6 +52,17 @@ Pappu: Tum so jayo maa, mein Jyoti ke pass ja raha hoon.<br>
 *******************************************************</p>
 </div>`
 };
+var articleThree={
+    title:'end page',
+    content:`    <div class="container">
+<a href="/">Home</a>
+<a href="/article-1">company profile</a>
+<a href="/article-2">jokes</a>
+<hr/>
+<h1>thanks for visiting</h1>
+</div>`
+    
+};
 function createTemplate(data){
     var title=data.title;
     var content=data.content;
@@ -86,7 +97,7 @@ app.get("/article-2",function(req,res){
    res.send(createTemplate(articleTwo));
 });
 app.get("/article-3",function(req,res){
-   res.sendFile(path.join(__dirname, 'ui', 'article-3.html'));
+   res.send(createTemplate(articleThree));
 });
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
