@@ -34,7 +34,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 app.get('/patatap',function(req,res){
-    res.sendFile(path.join(_dirname,'ui','circles.html'));
+    res.sendFile(path.join(__dirname,'ui','circles.html'));
 });
 var pool=new Pool(config);
 app.get('/test-db',function(req,res){
